@@ -6,7 +6,7 @@ An online code editor for the trivial language.
     ```console
     $ python server_run.py
     ```
-2. Navigate to the `/frontend` folder in the terminal and run the following commands to start the front end an run the cite locally
+2. Navigate to the `/frontend` folder in the terminal and run the following commands to start the front end run the cite locally
     ```console
     $ npm install -g http-server
     $ http-server
