@@ -16,6 +16,13 @@ html, body{
     width: 100%;
 }
 
+.title{
+    font-family: helvetica;
+    text-align: center; 
+    color:var(--editor-border); 
+    margin-bottom: 1rem; 
+}
+
 .editor{
     height: 100%;
     width: 100%;
