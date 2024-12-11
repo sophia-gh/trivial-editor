@@ -90,6 +90,7 @@ executeCodeBtn.addEventListener('click', async () => {
             textToPrint.push(line); //this is a global array that is accessed by the print to trivial console function
         });
     } catch (err) {
+        textToPrint.push(err)
         console.error(err); 
     }
 
