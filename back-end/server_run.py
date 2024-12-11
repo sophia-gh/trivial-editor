@@ -1,10 +1,12 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 from tokenizer import tokenize
 from parser import parse
 from evaluator import evaluate
 
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/run', methods=['POST'])
 def run_code():
