@@ -1,7 +1,7 @@
-# trivial-editor
-An online code editor for the trivial language. 
+# Trivial Editor demo release
+An online code editor for the trivial language. Can currently be run locally by cloning this repository. 
 
-## Instructions to Run Globally
+## Instructions to Run Locally
 1. Navigate to the `/backend` folder in the terminal and run the following command to start the backend
     ```console
     $ python server_run.py
