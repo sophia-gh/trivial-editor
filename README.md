@@ -14,6 +14,10 @@ An online code editor for the trivial language. Can currently be run locally by 
 3. Open any of the local urls output by the ```http-server``` command in a browser window
 4. Write trivial code in the editor and view the output in the console displayed!
 
+## Product Walkthrough and Demonstration
+[![Watch the video](https://img.youtube.com/vi/2pWnaBKQtns/maxresdefault.jpg)](https://youtu.be/2pWnaBKQtns) 
+
+
 ## Resources Used
 *Ace Code Editor*, an opensource code-editor component for web projects. Provides a formatted editor with syntax highlighting abilities, implemented in javascript. <br>[link: https://ace.c9.io/]
 
