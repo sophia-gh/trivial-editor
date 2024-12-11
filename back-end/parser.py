@@ -1082,10 +1082,10 @@ def parse_program(tokens):
     program = [ statement { ";" statement } ] ;
     """
     statements = []
-    if tokens[0]["tag"]:
+    if tokens and tokens[0]["tag"]:
         statement, tokens = parse_statement(tokens)
         statements.append(statement)
-        while tokens[0]["tag"] == ";":
+        while tokens and tokens[0]["tag"] == ";":
             tokens = tokens[1:]
             statement, tokens = parse_statement(tokens)
             statements.append(statement)

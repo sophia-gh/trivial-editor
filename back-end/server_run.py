@@ -1,3 +1,5 @@
+import io
+import sys
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from tokenizer import tokenize
@@ -13,12 +15,17 @@ def run_code():
     try:
         code = request.json.get('code', '')
         environment = {}
-
         tokens = tokenize(code)
         ast = parse(tokens)
-        result, _ = evaluate(ast,environment)
 
-        return jsonify({"result":result})
+        captured_output = io.StringIO()
+        sys.stdout = captured_output
+        evaluate(ast, environment)
+
+        output = captured_output.getvalue()
+        sys.stdout = sys.__stdout__
+
+        return jsonify({"result":output})
     except Exception as e:
         return jsonify({"error":str(e)}), 400
 

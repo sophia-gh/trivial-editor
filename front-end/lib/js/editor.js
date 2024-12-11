@@ -83,6 +83,7 @@ executeCodeBtn.addEventListener('click', async () => {
         //this function needs to return at LEAST the output of the code, should also find way to output errors but not necessary
         //this output should be an array of strings, 1 for each line of output 
         const result = await run(userCode);
+        console.log(result);
 
         //example of code that takes string of input, splits on each new line, and pushes each line to an array
         const lines = result.split("\n"); //split userCode string by new line character
