@@ -1,3 +1,4 @@
+import {run} from './parser.js';
 // retrieve elements
 const consoleLogList = document.querySelector(".editor__console-logs");
 const executeCodeBtn = document.querySelector(".editor__run");
@@ -68,7 +69,7 @@ var editorLib = {
 }
 
 //Events
-executeCodeBtn.addEventListener('click', () => {
+executeCodeBtn.addEventListener('click', async () => {
     //clear the console
     editorLib.clearConsoleScreen(); 
     //get input from code editor
@@ -77,14 +78,14 @@ executeCodeBtn.addEventListener('click', () => {
     //run the user code
     try {
         console.log(userCode); //this just outputs what user code is in the debug console
-
         //NEED: function that takes the userCode and runs it as trivial code, likely need to add the trivial source code files to the project then
         //take the user input from text>>tokens>>parsedtokens(Ast)>>evaluatedAst(output)
         //this function needs to return at LEAST the output of the code, should also find way to output errors but not necessary
         //this output should be an array of strings, 1 for each line of output 
+        const result = await run(userCode);
 
         //example of code that takes string of input, splits on each new line, and pushes each line to an array
-        const lines = userCode.split("\n"); //split userCode string by new line character
+        const lines = result.split("\n"); //split userCode string by new line character
         lines.forEach(line => {
             textToPrint.push(line); //this is a global array that is accessed by the print to trivial console function
         });
